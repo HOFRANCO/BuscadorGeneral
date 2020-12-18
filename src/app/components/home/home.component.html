@@ -1,0 +1,25 @@
+<div class="card bg-light mb-3" style="margin-left: 12px;" *ngFor="let comite of comites; let i = index">
+    <div class="card-header">{{comite.categoria}} - {{comite.tipo}}</div>
+    <div class="card-body">
+        <p class="texto" style="padding: 0; margin: 0;"><b>Fecha:</b> {{comite.fecha | slice:0:10}}</p>
+
+        <ng-container *ngIf="comite.tema !== ''; else noTema">
+            <p class="texto"><b>Tema:</b> {{comite.tema}} </p>
+        </ng-container>
+
+        <ng-template #noTema>
+            <p class="texto"><b>Tema:</b> {{comite.proyectosAprobados}} </p>
+        </ng-template>
+
+
+        <ng-container *ngIf="comite.documentacion !== ''; else noDocument">
+            <a href={{comite.documentacion}} target="_blank">Ir a la documentación</a>
+        </ng-container>
+
+        <ng-template #noDocument>
+            <div>
+                <p><b>Documentación: </b> <span class="text-primary">Próximamente</span></p>
+            </div>
+        </ng-template>
+    </div>
+</div>

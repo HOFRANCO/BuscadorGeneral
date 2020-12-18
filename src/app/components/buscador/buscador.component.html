@@ -1,0 +1,9 @@
+<div class="form-inline">
+    <div class="form-group mx-sm-3 mb-2">
+        <input type="text" size="40" class="form-control" id="inputPassword2" placeholder="Buscador General" #comite (keyup.enter)="buscarComite_2(comite.value)">
+    </div>
+    <button type="button" class="btn btn-primary mb-2" (click)="buscarComite_2(comite.value)">Buscar</button>
+
+    <app-buscador-fecha style="margin-left: 10px;"></app-buscador-fecha>
+
+</div>
